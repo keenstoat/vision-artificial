@@ -15,19 +15,19 @@ El proceso consiste en transformaciones a la imagen de manera que se puedan enco
 
 # Procedimiento
 
-## Toma de muestras para analisis
+## Toma de imagenes de muestra para analisis
 Dada una fotografia de un area con grama como la siguiente:
 
 <table><thead><tr><th>
-Fotografia completa de grama
+Fotografia completa de grama - 4032x3024 pixeles
 </th></tr></thead><tbody><tr><td>
-<img src="imagen-grama-full.jpg">
+<img src="grass-full/grass.jpg">
 </td></tr></tbody></table>
 
-Se han tomado 5 imagenes de muestra de 512 x 512 pixeles.
+Se han tomado 7 imagenes de muestra de 512 x 512 pixeles.
 
 <table><thead><tr><th>
-Muestra de 512 x 512 pixeles
+Ejemplo de imagen de muestra de 512 x 512 pixeles
 </th></tr></thead><tbody><tr><td>
 <img src="grass-1/grass.png">
 </td></tr></tbody></table>
@@ -35,7 +35,7 @@ Muestra de 512 x 512 pixeles
 
 ## Escala de grises
 
-La muestra es convertida a escala de grises. Esto reduce los canales de colores a solamente uno.
+Cada imagen es convertida a escala de grises. Esto reduce los canales de colores a solamente uno.
 <table><thead><tr><th>
 Escala de grises
 </th></tr></thead><tbody><tr><td>
@@ -73,7 +73,7 @@ El siguiente paso es la deteccion de bordes.
 
 Este paso se considero con Canny pero los bordes resultantes no daban resultados satisfactorios por lo que se procedio con un metodo de aplicacion de mascara.
 
-Primero se dilata la imagen binarizada (del paso anterior) con un kernel de 5x5
+Primero se dilata la muestra binarizada (del paso anterior) con un kernel de 5x5
 <table><thead><tr><th>
 Dilatacion de imagen binarizada
 </th></tr></thead><tbody><tr><td>
@@ -163,18 +163,26 @@ La principal dificultad es que los tallos de grama se traslapan entre si de tal 
 
 El desorden de la grama es una fuente significativa de incertidumbre en el proceso de conteo.
 
-Por esta razon se resolvio el problema como un metodo de aproximacion promedio.
-
 > Todas las transformaciones realizadas y sus metricas (como el tamaño de kernels, umbral de binarizacion, entre otros) han sido ajustados mediante ensayo y error de manera que el numero de contornos encontrados se ajuste lo mejor posible al numero de tallos de grama contados manualmente.
 
-A continuacion se muestra la comparacion entre el valor esperado y el valor calculado por la aplicacion.
+A continuacion se muestra la comparacion entre el valor calculado por la aplicacion y el valor esperado (los tallos contados manualmente) para cada una de las muestras.
+
+| Muestra | Tallos esperados | Tallos calculados |
+|---------|------------------|-------------------|
+| 1       | 55               | 53                |
+| 2       | 53               | 50                |
+| 3       | 72               | 62                |
+| 4       | 51               | 46                |
+| 5       | 68               | 64                |
+| 6       | 58               | 60                |
+| 7       | 63               | 50                |
 
 ## Muestra 1
 <table>
 <thead>
   <tr>
-    <th>Tallos de grama contados manualmente - 55</th>
-    <th>Contornos significativos encontrados - 53</th>
+    <th>Tallos de grama esperados:  55</th>
+    <th>Contornos significativos calculados: 53</th>
   </tr>
 </thead>
 <tbody>
@@ -189,8 +197,8 @@ A continuacion se muestra la comparacion entre el valor esperado y el valor calc
 <table>
 <thead>
   <tr>
-    <th>Tallos de grama contados manualmente - 53</th>
-    <th>Contornos significativos encontrados - 50</th>
+    <th>Tallos de grama esperados:  53</th>
+    <th>Contornos significativos calculados: 50</th>
   </tr>
 </thead>
 <tbody>
@@ -205,8 +213,8 @@ A continuacion se muestra la comparacion entre el valor esperado y el valor calc
 <table>
 <thead>
   <tr>
-    <th>Tallos de grama contados manualmente - 72</th>
-    <th>Contornos significativos encontrados - 62</th>
+    <th>Tallos de grama esperados:  72</th>
+    <th>Contornos significativos calculados: 62</th>
   </tr>
 </thead>
 <tbody>
@@ -221,13 +229,13 @@ A continuacion se muestra la comparacion entre el valor esperado y el valor calc
 <table>
 <thead>
   <tr>
-    <th>Tallos de grama contados manualmente - 133</th>
-    <th>Contornos significativos encontrados - 72</th>
+    <th>Tallos de grama esperados:  133</th>
+    <th>Contornos significativos calculados: 72</th>
   </tr>
 </thead>
 <tbody>
   <tr>
-    <td><img src="grass-4/grass-133-tallos.png"></td>
+    <td><img src="grass-4/grass-51-tallos.png"></td>
     <td><img src="grass-4/10-contornos-significativos.png"></td>
   </tr>
 </tbody>
@@ -237,8 +245,8 @@ A continuacion se muestra la comparacion entre el valor esperado y el valor calc
 <table>
 <thead>
   <tr>
-    <th>Tallos de grama contados manualmente - 68</th>
-    <th>Contornos significativos encontrados - 64</th>
+    <th>Tallos de grama esperados:  68</th>
+    <th>Contornos significativos calculados: 64</th>
   </tr>
 </thead>
 <tbody>
@@ -248,3 +256,68 @@ A continuacion se muestra la comparacion entre el valor esperado y el valor calc
   </tr>
 </tbody>
 </table>
+
+## Muestra 6
+<table>
+<thead>
+  <tr>
+    <th>Tallos de grama esperados:  58</th>
+    <th>Contornos significativos calculados: 60</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td><img src="grass-6/grass-58-tallos.png"></td>
+    <td><img src="grass-6/10-contornos-significativos.png"></td>
+  </tr>
+</tbody>
+</table>
+
+## Muestra 7
+<table>
+<thead>
+  <tr>
+    <th>Tallos de grama esperados:  63</th>
+    <th>Contornos significativos calculados: 50</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td><img src="grass-7/grass-63-tallos.png"></td>
+    <td><img src="grass-7/10-contornos-significativos.png"></td>
+  </tr>
+</tbody>
+</table>
+
+# Anailsis de Resultados
+
+De los resultados obtenidos se calcula la media y desviacion para los tallos esperados y los calculados por la aplicacion en las imagenes de muestra.
+
+| Metrica    | Tallos esperados | Tallos calculados |
+|------------|------------------|-------------------|
+| Media      | 60               | 55                |
+| Desviacion | 7.3290           | 6.4365            |
+
+Dado a que cada imagen de muestra es una ventana de `512x512 px` y la imagen completa tiene `4032x3024 px`, entonces en la imagen completa tiene 46.5117 ventanas que no se traslapan. Se puede pensar esto como una cuadricula con 46.5117 ventanas.
+
+El calculo de contornos en la imagen completa resulta en `2225` contornos (tallos encontrados).
+
+Al realizar una prueba de hipotesis con 90% de confianza (ANOVA de una sola via) con:
+- Hipotesis nula: medias son iguales
+- Hipotesis alterna: medias son difernetes
+
+El resultado del ANOVA encuentra los valores:
+- `F`: 1.5766
+- `p`: 0.2332
+
+
+<table><thead><tr><th>
+ANOVA a 90% de confianza
+</th></tr></thead><tbody><tr><td>
+<img src="anova.png" width="500">
+</td></tr></tbody></table>
+
+Como el valor de `p = 0.2332` es **mayor** que la significancia `α/2 = 0.05` se puede concluir que no existe suficiente evidencia para determinar que existe una diferencia significativa entre los tallos contados por la aplicacion y los tallos contados a simple vista.
+
+Es decir, la aplicacion puede contar los tallos de grama en una imagen con un 90% de confianza.
+
