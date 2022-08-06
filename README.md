@@ -332,4 +332,6 @@ Como el valor de `p = 0.2332` es **mayor** que la significancia `α/2 = 0.05` en
 
 Se puede decir, con un 90% de confianza, que **NO** existe suficiente evidencia que indique que existe alguna diferencia significativa entre el conteo de tallos por la aplicacion y el conteo de tallos contados a simple vista por un humano.
 
-Es decir, la aplicacion puede contar tan efectivamente los tallos de grama en una imagen como lo haria un humano.
+La aplicacion puede contar tan efectivamente los tallos de grama en una imagen como lo haria un humano.
+
+Con un 90% de confianza se puede determinar que hay 2225 tallos de grama en la fotografia original.
