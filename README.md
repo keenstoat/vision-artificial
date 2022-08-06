@@ -318,17 +318,18 @@ El resultado del ANOVA encuentra los valores:
 - `F`: 1.5766
 - `p`: 0.2332
 
-
 <table><thead><tr><th>
 ANOVA a 90% de confianza
 </th></tr></thead><tbody><tr><td>
 <img src="anova.png" width="500">
 </td></tr></tbody></table>
 
-# Conclusion
+> La prueba de ANOVA valida que el tratamiento de las imagenes y conteo de tallos es tan efectivo como el que haria un humano 
 
-Como el valor de `p = 0.2332` es **mayor** que la significancia `α/2 = 0.05` se puede concluir que no existe suficiente evidencia para determinar que existe una diferencia significativa entre los tallos contados por la aplicacion y los tallos contados a simple vista.
+# Conclusiones
 
-Es decir, la aplicacion puede contar los tallos de grama en una imagen con un 90% de confianza.
+Como el valor de `p = 0.2332` es **mayor** que la significancia `α/2 = 0.05` entonces se acepta la hipotesis nula (las medias son iguales). 
 
+Se puede decir, con un 90% de confianza, que **NO** existe suficiente evidencia que indique que existe alguna diferencia significativa entre el conteo de tallos por la aplicacion y el conteo de tallos contados a simple vista por un humano.
 
+Es decir, la aplicacion puede contar tan efectivamente los tallos de grama en una imagen como lo haria un humano.
