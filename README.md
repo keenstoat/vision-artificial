@@ -1,5 +1,5 @@
 
-# Estimacion del cantidad tallos de grama en una imagen
+# Estimacion de la cantidad tallos de grama en una imagen
 
 ### Vision Artificial 2022 - Carlos Josue Avila - carne: 20016235
 
