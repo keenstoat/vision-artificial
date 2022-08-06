@@ -325,7 +325,10 @@ ANOVA a 90% de confianza
 <img src="anova.png" width="500">
 </td></tr></tbody></table>
 
+# Conclusion
+
 Como el valor de `p = 0.2332` es **mayor** que la significancia `α/2 = 0.05` se puede concluir que no existe suficiente evidencia para determinar que existe una diferencia significativa entre los tallos contados por la aplicacion y los tallos contados a simple vista.
 
 Es decir, la aplicacion puede contar los tallos de grama en una imagen con un 90% de confianza.
+
 
