@@ -5,13 +5,21 @@
 
 ## Abstracto
 
-Este proyecto consiste en contar el numero de tallos de grama en una imagen de manera que se pueda estimar el numero de tallos de grama en un area de mayor tamaño.
+Este proyecto consiste en contar el numero de tallos de grama en una imagen.
 
-Para esto se procesado imagenes de muestra de 512x512 pixeles. Estas muestras se han tomado como segmentos de imagenes de mayor tamaño.
+Para esto se han procesado imagenes de muestra de 512x512 pixeles. Estas muestras son segmentos de la imagen mayor..
 
-El proceso consiste en transformaciones a la imagen de manera que se puedan encontrar contornos en la misma. 
+Cada imagen de muestra sufre un conjunto de transformaciones de manera que se pueda encontrar todos los contornos en ella. Los tallos de grama en cada imagen de muestra se cuentan a simple vista tambien.
 
+Teniendo los datos de ambas muestras, tallos esperados y tallos calculados, se procede a realizar una prueba de hipotesis para validar el procesamiento de las imagenes.
 
+Con este procedimiento se encuentra que no existe diferencias significativas entre la cuenta de tallos de grama realizada por el humano y la realizada por la aplicacion desarrollada.
+
+# Video en YouTube
+
+El siguiente video realiza una explicacion visual del proyecto
+
+[Vision Artificial 2022 - Conteo de tallos de grama](https://youtu.be/641IAOL4DTs)
 
 # Procedimiento
 
@@ -298,7 +306,7 @@ De los resultados obtenidos se calcula la media y desviacion para los tallos esp
 | Media      | 60               | 55                |
 | Desviacion | 7.3290           | 6.4365            |
 
-Dado a que cada imagen de muestra es una ventana de `512x512 px` y la imagen completa tiene `4032x3024 px`, entonces en la imagen completa tiene 46.5117 ventanas que no se traslapan. Se puede pensar esto como una cuadricula con 46.5117 ventanas.
+Dado a que cada imagen de muestra es una ventana de `512x512 px` y la imagen completa tiene `4032x3024 px`, entonces en la imagen completa tiene `46.5117` ventanas que no se traslapan. Se puede pensar esto como una cuadricula con 46.5117 ventanas.
 
 El calculo de contornos en la imagen completa resulta en `2225` contornos (tallos encontrados).
 
