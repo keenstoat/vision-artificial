@@ -309,6 +309,11 @@ De los resultados obtenidos se calcula la media y desviacion para los tallos esp
 Dado a que cada imagen de muestra es una ventana de `512x512 px` y la imagen completa tiene `4032x3024 px`, entonces en la imagen completa tiene `46.5117` ventanas que no se traslapan. Se puede pensar esto como una cuadricula con 46.5117 ventanas.
 
 El calculo de contornos en la imagen completa resulta en `2225` contornos (tallos encontrados).
+<table><thead><tr><th>
+Contornos encontrados en imagen completa
+</th></tr></thead><tbody><tr><td>
+<img src="grass-full/10-contornos-significativos.jpg">
+</td></tr></tbody></table>
 
 Al realizar una prueba de hipotesis con 90% de confianza (ANOVA de una sola via) con:
 - Hipotesis nula: medias son iguales
