@@ -306,14 +306,19 @@ De los resultados obtenidos se calcula la media y desviacion para los tallos esp
 | Media      | 60               | 55                |
 | Desviacion | 7.3290           | 6.4365            |
 
+El calculo de contornos hecho por la aplicacion en la imagen completa resulta en `2225` contornos (tallos encontrados).
+
 Dado a que cada imagen de muestra es una ventana de `512x512 px` y la imagen completa tiene `4032x3024 px`, entonces en la imagen completa tiene `46.5117` ventanas que no se traslapan. Se puede pensar esto como una cuadricula con 46.5117 ventanas.
 
-El calculo de contornos en la imagen completa resulta en `2225` contornos (tallos encontrados).
+Si se multiplica el numero de ventanas por el promedio de tallos calculados por cada ventana, `(46.5117 ventanas) * (55 ± 6.4365) tallos = 2558.14 ± 299.37 tallos`, se puede observar que el valor encontrado por la aplicacion (`2225`) esta dentro del rango esperado.
+
 <table><thead><tr><th>
 Contornos encontrados en imagen completa
 </th></tr></thead><tbody><tr><td>
 <img src="grass-full/10-contornos-significativos.jpg">
 </td></tr></tbody></table>
+
+Para validar este modelo y **asumiendo que el numero de tallos por unidad de area se distribuye normalmente**, entonces se puede realizar una prueba ANOVA.
 
 Al realizar una prueba de hipotesis con 90% de confianza (ANOVA de una sola via) con:
 - Hipotesis nula: medias son iguales
